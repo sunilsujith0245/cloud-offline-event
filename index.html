@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Pro Foodpreneur Intensive</title>
+<meta name="description" content="A one-day, hands-on bootcamp in Bangalore for food business owners. Build, brand, and scale your business live with Coach Karthikeyan.">
+<meta property="og:title" content="Launch or Scale Your Food Business in One Day | Pro Foodpreneur">
+<meta property="og:description" content="A one-day, hands-on bootcamp in Bangalore for food business owners. One table. One day. Your plan.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<!--
+  ════════════════════════════════════════════════════════════════════
+  HOW TO ADD YOUR OWN PHOTOS & VIDEOS (no coding needed)
+  ────────────────────────────────────────────────────────────────────
+  1. Put files in these folders (use hyphens, NO spaces, NO "&"):
+       assets/images/gallery/       Edition 1 photos        → any size, shown 4:3
+       assets/images/stories/       founder photos          → shown 4:5 portrait
+       assets/images/coach/         coach portrait          → shown 4:5 portrait
+       assets/images/press/         press logos (PNG/SVG)   → shown inside 5:2 tiles
+       assets/images/testimonials/  small avatar for quotes → square
+       assets/videos/testimonials/  attendee reels (MP4)    → shown 9:16 vertical
+       assets/videos/gallery/       short clips (MP4)       → shown 4:3
+  2. Every photo/video slot is cropped to the SAME ratio automatically,
+     so mixed sizes still line up with identical gaps.
+     Ratios live in style.css → :root → "MEDIA RATIOS".
+  3. To ADD one more item: copy one block marked "COPY THIS BLOCK",
+     paste it right below, and change the file path + text.
+     Counters, numbering, carousels and the lightbox adjust by themselves.
+  4. A missing file never shows a broken icon — it shows a neat
+     placeholder telling you what goes there.
+  5. Payment link, event date and open seats: script.js → CONFIG (top).
+  ════════════════════════════════════════════════════════════════════
+-->
+
+<!-- scroll progress line -->
+<div class="progress" aria-hidden="true"><i></i></div>
+
+<!-- icon set (used by the bonus cards) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2.5h8l5 5v14H6z"/><path d="M14 2.5v5h5M9 12.5h7M9 16.5h5"/></g></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4.5L17 13H5"/></g></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 15l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></g></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></g></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M10 10v10"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 9.5l2 2 4-4M8 16h8"/></g></symbol>
+  </defs>
+</svg>
+
+<!-- ═══════════════════ 01 · HERO ═══════════════════ -->
+<!-- ════════════════════════ HERO ════════════════════════ -->
+<section class="hero" id="hero">
+
+  <!-- background stack -->
+  <div class="hero__media">
+    <!--
+      ▼ YOUR HERO VIDEO ▼
+      Replace the src below with your file. Best: assets/videos/hero.mp4
+      (10-20s loop, 1920×1080, 3-5 MB, no audio). Keep muted + playsinline.
+    -->
+    <video class="hero__video" id="heroVideo"
+           autoplay muted loop playsinline preload="metadata"
+           poster="">
+      <source src="image&video/Cloud kitchen landing page herovideo.mp4">
+      <!-- <source src="assets/videos/hero.mp4" type="video/mp4"> -->
+    </video>
+    <canvas class="hero__embers" id="embers"></canvas>
+    <div class="hero__grade"></div>
+    <div class="hero__grain"></div>
+  </div>
+  <div class="hero__spot" id="spot"></div>
+
+  <span class="hero__side">Pro Foodpreneur School · Bangalore · Edition 02</span>
+
+  <!-- top bar -->
+  <nav class="hero__nav">
+    <div class="brandmark">
+      <span class="bm">PF</span>
+      <span><b>Pro Foodpreneur</b><small>Intensive</small></span>
+    </div>
+    <span class="livepill"><span class="dot"></span><span>Registrations open · <b data-ev="short">10 Oct</b></span></span>
+  </nav>
+
+  <!-- body -->
+  <div class="hero__body">
+    <div>
+      <span class="kicker">One-day offline bootcamp · Bangalore</span>
+
+      <h1>
+        <span class="w"><i class="ink" style="animation-delay:.30s">Your</i></span>
+        <span class="w"><i class="ink" style="animation-delay:.38s">food</i></span>
+        <span class="w"><i class="ink" style="animation-delay:.46s">business,</i></span>
+        <span class="w"><i class="ink" style="animation-delay:.54s">figured</i></span>
+        <span class="w"><i class="ink" style="animation-delay:.62s">out</i></span>
+        <span class="w"><i class="ink" style="animation-delay:.70s">in</i></span>
+        <span class="w"><i class="hot" style="animation-delay:.78s">one&nbsp;day.</i></span>
+      </h1>
+
+      <p class="sub">Format, menu, pricing, team and brand — mapped out with Coach Karthikeyan while you're in the room. You work on your own business, not somebody's case study.</p>
+
+      <div class="cd" id="countdown">
+        <span class="cd-lab">Doors open in</span>
+        <div class="cd-unit"><b id="cdD">00</b><small>Days</small></div>
+        <span class="cd-sep">:</span>
+        <div class="cd-unit"><b id="cdH">00</b><small>Hrs</small></div>
+        <span class="cd-sep">:</span>
+        <div class="cd-unit"><b id="cdM">00</b><small>Min</small></div>
+        <span class="cd-sep">:</span>
+        <div class="cd-unit"><b id="cdS">00</b><small>Sec</small></div>
+      </div>
+
+      <div class="hero__cta">
+        <a class="btn btn--fire" href="#reserve">Reserve my seat · ₹2,499 <span aria-hidden="true">→</span></a>
+        <a class="btn btn--glass" href="#agenda">See the full day</a>
+      </div>
+
+      <div class="hero__trust">
+        <span><b>9,000+</b> entrepreneurs trained</span>
+        <span><b>500+</b> brands scaled</span>
+        <span><b>8</b> countries</span>
+      </div>
+    </div>
+
+    <!-- booking console -->
+    <aside class="console">
+      <div class="console-top">
+        <div>
+          <div class="ct">Seat price</div>
+          <div class="cp">₹2,499<em>All inclusive</em></div>
+        </div>
+        <div class="datechip">
+          <b data-ev="daynum">10</b><small data-ev="mon">Oct</small>
+        </div>
+      </div>
+
+      <div class="console-rows">
+        <div class="crow"><span><i>📅</i>Date</span><b data-ev="full">Sat, 10 Oct 2026</b></div>
+        <div class="crow"><span><i>🕘</i>Timing</span><b>9:00 AM – 6:00 PM</b></div>
+        <div class="crow"><span><i>📍</i>Venue</span><b>Bannerghatta Rd,<br>Bangalore</b></div>
+        <div class="crow"><span><i>🍽</i>Included</span><b>Lunch + 2 teas</b></div>
+        <div class="crow"><span><i>📘</i>Take home</span><b>Workbook + 6 files</b></div>
+      </div>
+
+      <a class="btn btn--fire" href="#reserve">Book my seat now</a>
+      <p class="fine">Exact venue shared right after registration.</p>
+    </aside>
+  </div>
+
+  <!-- bottom rail -->
+  <div class="hero__foot">
+    <button class="soundbtn" id="soundBtn" type="button" aria-label="Toggle video sound" aria-pressed="false">🔇</button>
+    <div class="ticker">
+      <div class="ticker-track" id="tickerTrack">
+        <span>The Times of India</span><span>Bangalore Times</span><span>Deccan Herald</span><span>Moneycontrol</span><span>Josh Talks</span><span>Jaya TV</span><span>Urban Talks</span><span>Boss Wallah</span>
+      </div>
+    </div>
+    <span class="scrollhint">Scroll <i></i></span>
+  </div>
+</section>
+
+<!-- ═══════════════════ 02 · SHIFT ═══════════════════ -->
+<!-- ══════════════════════ SECTION C · THE SHIFT (flip board) ══════════════════════ -->
+<section class="sec shift surface-ink" id="shift">
+  <div class="sec-in">
+    <div class="sec-head sec-head--center reveal">
+      <span class="eyebrow">The shift</span>
+      <h2>The old way vs. the Pro&nbsp;Foodpreneur way</h2>
+      <p>Most food owners we meet cook well. What's usually missing is a system for everything else. Tap any line to flip it.</p>
+    </div>
+
+    <div class="shift-ctrl reveal">
+      <div class="seg" role="group" aria-label="Show the old way or the Pro Foodpreneur way">
+        <button type="button" data-shift="old" aria-pressed="true">The old way</button>
+        <button type="button" data-shift="new" aria-pressed="false">Pro Foodpreneur way</button>
+      </div>
+      <div class="shift-score" id="shiftScore">
+        <span>Systems in place</span><span class="track"><i></i></span><b id="shiftNum">0/5</b>
+      </div>
+    </div>
+
+    <div class="board" id="board">
+      <!-- COPY THIS BLOCK to add a row (old line on top, new line underneath) -->
+      <button class="flip" type="button" aria-pressed="false">
+        <span class="flip-in">
+          <span class="flip-face flip-old"><span class="fl-no"></span><span class="fl-ic">✕</span><span class="fl-txt">Everything runs through you, or one or two chefs</span><span class="fl-tag">Old way</span></span>
+          <span class="flip-face flip-new"><span class="fl-no"></span><span class="fl-ic">✓</span><span class="fl-txt">Systems and a team structure anyone can follow</span><span class="fl-tag">PF way</span></span>
+        </span>
+      </button>
+      <!-- END BLOCK -->
+      <button class="flip" type="button" aria-pressed="false">
+        <span class="flip-in">
+          <span class="flip-face flip-old"><span class="fl-no"></span><span class="fl-ic">✕</span><span class="fl-txt">One outlet, one revenue stream, one income ceiling</span><span class="fl-tag">Old way</span></span>
+          <span class="flip-face flip-new"><span class="fl-no"></span><span class="fl-ic">✓</span><span class="fl-txt">A plan for multiple revenue streams from one kitchen</span><span class="fl-tag">PF way</span></span>
+        </span>
+      </button>
+      <button class="flip" type="button" aria-pressed="false">
+        <span class="flip-in">
+          <span class="flip-face flip-old"><span class="fl-no"></span><span class="fl-ic">✕</span><span class="fl-txt">Pricing, menu and marketing decided by gut feel</span><span class="fl-tag">Old way</span></span>
+          <span class="flip-face flip-new"><span class="fl-no"></span><span class="fl-ic">✓</span><span class="fl-txt">A sequenced framework: foundation, branding, execution</span><span class="fl-tag">PF way</span></span>
+        </span>
+      </button>
+      <button class="flip" type="button" aria-pressed="false">
+        <span class="flip-in">
+          <span class="flip-face flip-old"><span class="fl-no"></span><span class="fl-ic">✕</span><span class="fl-txt">Months and lakhs lost to trial and error</span><span class="fl-tag">Old way</span></span>
+          <span class="flip-face flip-new"><span class="fl-no"></span><span class="fl-ic">✓</span><span class="fl-txt">Decisions backed by unit economics and research</span><span class="fl-tag">PF way</span></span>
+        </span>
+      </button>
+      <button class="flip" type="button" aria-pressed="false">
+        <span class="flip-in">
+          <span class="flip-face flip-old"><span class="fl-no"></span><span class="fl-ic">✕</span><span class="fl-txt">Depending on aggregators for every customer</span><span class="fl-tag">Old way</span></span>
+          <span class="flip-face flip-new"><span class="fl-no"></span><span class="fl-ic">✓</span><span class="fl-txt">A brand that owns its customers</span><span class="fl-tag">PF way</span></span>
+        </span>
+      </button>
+    </div>
+
+    <div class="sec-cta reveal">
+      <p>One table. <b>One working day.</b></p>
+      <a class="btn btn--fire" href="#reserve">Reserve my seat · ₹2,499</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 03 · WALK ═══════════════════ -->
+<!-- ══════════════════════ SECTION B · THE DOCKET ══════════════════════ -->
+<section class="walk" id="walk">
+  <div class="walk-in">
+    <div class="walk-head">
+      <span class="eyebrow">What you walk out with</span>
+      <h2>Four things on your docket by 6 PM.</h2>
+      <p>Not notes — decisions, made on your own numbers. Tap a line to see what it means.</p>
+    </div>
+
+    <div class="walk-grid">
+      <div class="docket">
+        <div class="dk-top">
+          <b>PRO FOODPRENEUR</b>
+          <small>Intensive · Edition 02</small>
+        </div>
+        <div class="dk-ref"><span>REF PFI-02</span><span><span data-ev="caps">10 OCT</span> · 09:00</span></div>
+
+        <div class="dk-list" role="tablist" aria-label="What you walk out with">
+          <button class="dk-item" role="tab" id="tab0" aria-controls="panel" aria-selected="true" data-i="0">
+            <span class="dk-box">✓</span>
+            <span class="dk-txt"><b>The right format</b><small>Foundation</small></span>
+            <span class="dk-qty">×1</span>
+          </button>
+          <button class="dk-item" role="tab" id="tab1" aria-controls="panel" aria-selected="false" data-i="1">
+            <span class="dk-box">✓</span>
+            <span class="dk-txt"><b>A menu priced to profit</b><small>Branding</small></span>
+            <span class="dk-qty">×1</span>
+          </button>
+          <button class="dk-item" role="tab" id="tab2" aria-controls="panel" aria-selected="false" data-i="2">
+            <span class="dk-box">✓</span>
+            <span class="dk-txt"><b>A kitchen that runs without you</b><small>Execution</small></span>
+            <span class="dk-qty">×1</span>
+          </button>
+          <button class="dk-item" role="tab" id="tab3" aria-controls="panel" aria-selected="false" data-i="3">
+            <span class="dk-box">✓</span>
+            <span class="dk-txt"><b>A brand that stands out</b><small>Branding</small></span>
+            <span class="dk-qty">×1</span>
+          </button>
+        </div>
+
+        <div class="dk-total">
+          <span>Total</span>
+          <b>One business that<br>finally runs</b>
+        </div>
+        <span class="dk-stamp" id="stamp">All read</span>
+        <p class="dk-hint">Seat price ₹2,499 · lunch included</p>
+      </div>
+
+      <div class="screen" id="panel" role="tabpanel" aria-labelledby="tab0">
+        <div class="sc-rail" aria-hidden="true">
+          <i class="on"></i><i></i><i></i><i></i>
+        </div>
+        <div class="sc-body" id="scBody"></div>
+        <div class="sc-foot">
+          <a class="btn btn--fire" href="#reserve">Book my seat</a>
+          <span class="note">₹2,499 all-in · doors <b>9:00 AM, <span data-ev="day">10 October</span></b>.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 04 · FIT ═══════════════════ -->
+<!-- ══════════════════════ SECTION E · WHO SHOULD ATTEND (stage matcher) ══════════════════════ -->
+<section class="sec fit surface-deep" id="fit">
+  <div class="sec-in">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Who should attend</span>
+      <h2>Built for every stage of a food business.</h2>
+      <p>Pick the line that sounds most like you — we'll show you which parts of the day will hit hardest.</p>
+    </div>
+
+    <div class="fit-grid">
+      <div class="personas" id="personas">
+        <!-- COPY THIS BLOCK to add a stage. data-weights = Foundation,Branding,Execution (0–3) -->
+        <button class="persona" type="button" aria-pressed="true" data-weights="3,2,1">
+          <span class="persona-no">01 · Idea stage</span>
+          <span class="persona-title">Just an idea, researching</span>
+          <span class="persona-go">See my day →</span>
+          <template class="persona-more">
+            <p>You know you want to start a food business but haven't picked a model yet: home kitchen, cloud kitchen, café, or QSR.</p>
+            <ul><li>Six food business models you can start today</li><li>What is the right time to start? (case study)</li><li>Understanding your target audience</li></ul>
+          </template>
+        </button>
+        <!-- END BLOCK -->
+        <button class="persona" type="button" aria-pressed="false" data-weights="3,3,2">
+          <span class="persona-no">02 · Planning</span>
+          <span class="persona-title">Planning to start soon</span>
+          <span class="persona-go">See my day →</span>
+          <template class="persona-more">
+            <p>You've decided to start in the next few months and want a clear plan before you spend a rupee.</p>
+            <ul><li>Competitive research using AI</li><li>Menu creation and engineering</li><li>Unit economics: costs, margins &amp; profit</li></ul>
+          </template>
+        </button>
+        <button class="persona" type="button" aria-pressed="false" data-weights="1,2,3">
+          <span class="persona-no">03 · Running</span>
+          <span class="persona-title">Running, but struggling</span>
+          <span class="persona-go">See my day →</span>
+          <template class="persona-more">
+            <p>You've launched, but profitability, systems, or team dependency are holding you back from real growth.</p>
+            <ul><li>Unit economics: costs, margins &amp; profit</li><li>Hiring &amp; managing your kitchen team</li><li>CEO mindset</li></ul>
+          </template>
+        </button>
+        <button class="persona" type="button" aria-pressed="false" data-weights="1,2,3">
+          <span class="persona-no">04 · Scaling</span>
+          <span class="persona-title">Already running, want to scale</span>
+          <span class="persona-go">See my day →</span>
+          <template class="persona-more">
+            <p>Your business works. Now you want a second revenue stream, a second outlet, or a real team behind it.</p>
+            <ul><li>The 1 Crore revenue roadmap</li><li>Community marketing case study</li><li>Hiring &amp; managing your kitchen team</li></ul>
+          </template>
+        </button>
+        <button class="persona" type="button" aria-pressed="false" data-weights="2,3,2">
+          <span class="persona-no">05 · Home kitchen</span>
+          <span class="persona-title">Home bakers &amp; home chefs</span>
+          <span class="persona-go">See my day →</span>
+          <template class="persona-more">
+            <p>You've built something from your kitchen and want to turn it into a properly branded, structured business.</p>
+            <ul><li>Brand building exercise</li><li>Menu creation and engineering</li><li>Unit economics: costs, margins &amp; profit</li></ul>
+          </template>
+        </button>
+        <button class="persona" type="button" aria-pressed="false" data-weights="3,2,2">
+          <span class="persona-no">06 · Career switch</span>
+          <span class="persona-title">Working professionals switching over</span>
+          <span class="persona-go">See my day →</span>
+          <template class="persona-more">
+            <p>You're in a corporate job today and want the clarity and plan to make the jump into food full-time.</p>
+            <ul><li>Six food business models you can start today</li><li>What is the right time to start? (case study)</li><li>CEO mindset</li></ul>
+          </template>
+        </button>
+      </div>
+
+      <aside class="fit-panel" id="fitPanel" aria-live="polite">
+        <span class="fit-kicker">If this is you</span>
+        <h3 id="fitTitle">Just an idea, researching</h3>
+        <div class="fit-body" id="fitBody">
+          <p>You know you want to start a food business but haven't picked a model yet: home kitchen, cloud kitchen, café, or QSR.</p>
+          <ul><li>Six food business models you can start today</li><li>What is the right time to start? (case study)</li><li>Understanding your target audience</li></ul>
+        </div>
+        <p class="fit-lab">Where the day lands for you</p>
+        <div class="fit-bars" id="fitBars">
+          <div class="fbar"><span>Foundation</span><i style="--v:3"></i></div>
+          <div class="fbar"><span>Branding</span><i style="--v:2"></i></div>
+          <div class="fbar"><span>Execution</span><i style="--v:1"></i></div>
+        </div>
+        <a class="btn btn--fire" href="#reserve">This is me — save my seat</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 05 · AGENDA ═══════════════════ -->
+<!-- ══════════════════════ SECTION D · AGENDA (sun clock) ══════════════════════ -->
+<section class="sec agenda surface-paper" id="agenda">
+  <div class="sec-in">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What the day covers</span>
+      <h2>Nine hours. Three phases. One plan.</h2>
+      <p>Foundation in the morning, branding before lunch, execution through the afternoon — each phase builds on the one before it.</p>
+    </div>
+
+    <div class="agenda-grid">
+      <aside class="clock" id="clock">
+        <svg class="clock-svg" viewBox="0 0 240 132" aria-hidden="true">
+          <defs>
+            <linearGradient id="sunGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" style="stop-color:var(--brand-gold)"/>
+              <stop offset="1" style="stop-color:var(--brand-coral)"/>
+            </linearGradient>
+          </defs>
+          <line class="horizon" x1="8" y1="120" x2="232" y2="120"/>
+          <path class="arc-bg" d="M20 120 A100 100 0 0 1 220 120"/>
+          <path class="arc-fg" id="arcFg" d="M20 120 A100 100 0 0 1 220 120"/>
+          <circle class="sun-glow" id="sunGlow" cx="20" cy="120" r="16"/>
+          <circle class="sun" id="sun" cx="20" cy="120" r="8"/>
+        </svg>
+        <div class="clock-time" id="clockTime" aria-hidden="true">9:00 AM</div>
+        <div class="clock-phase" id="clockPhase">Foundation</div>
+        <span class="clock-bar" aria-hidden="true"><i></i></span>
+        <div class="clock-legend"><span>9:00 AM</span><span>Lunch on us</span><span>6:00 PM</span></div>
+        <a class="btn btn--fire" href="#reserve">Reserve my seat</a>
+      </aside>
+
+      <div class="phases" id="phases">
+        <article class="phase is-active" data-phase="Foundation">
+          <header class="phase-head">
+            <span class="phase-no">01</span>
+            <div><small>Morning</small><h3>Foundation</h3></div>
+          </header>
+          <ul class="phase-list">
+            <li><span>Six food business models you can start today</span></li>
+            <li><span>Competitive research using AI</span><em>AI</em></li>
+            <li><span>Understanding your target audience</span></li>
+            <li><span>Know your coach</span></li>
+          </ul>
+        </article>
+
+        <div class="brk">☕ Tea break</div>
+
+        <article class="phase" data-phase="Branding">
+          <header class="phase-head">
+            <span class="phase-no">02</span>
+            <div><small>Late morning</small><h3>Branding</h3></div>
+          </header>
+          <ul class="phase-list">
+            <li><span>CEO mindset</span></li>
+            <li><span>What is the right time to start your food business?</span><em>Case study</em></li>
+            <li><span>Brand building exercise</span><em>Hands-on</em></li>
+            <li><span>Menu creation and engineering</span></li>
+          </ul>
+        </article>
+
+        <div class="brk">🍽 Lunch — on us</div>
+
+        <article class="phase" data-phase="Execution">
+          <header class="phase-head">
+            <span class="phase-no">03</span>
+            <div><small>Afternoon</small><h3>Execution</h3></div>
+          </header>
+          <ul class="phase-list">
+            <li><span>The 1 Crore revenue roadmap</span></li>
+            <li><span>Hiring &amp; managing your kitchen team</span></li>
+            <li><span>Unit economics: costs, margins &amp; profit</span></li>
+            <li><span>Community marketing</span><em>Case study</em></li>
+            <li><span>Live Q&amp;A</span><em>Live</em></li>
+          </ul>
+        </article>
+
+        <p class="agenda-note">Two tea breaks and lunch are built into the day. Food is on us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 06 · COACH ═══════════════════ -->
+<!-- ══════════════════════ SECTION K · COACH + PRESS ══════════════════════ -->
+<section class="sec coach surface-ink" id="coach">
+  <div class="sec-in">
+    <div class="coach-grid">
+      <div class="portrait reveal">
+        <!-- Coach photo: assets/images/coach/karthikeyan.jpg (shown 4:5) -->
+        <div class="media" data-label="Coach portrait · 4:5"><img src="image&video/Coach Karthikeyan Selvaraj.webp" alt="Coach Karthikeyan Selvaraj" loading="lazy"></div>
+        <div class="portrait-plate">
+          <span><b>Karthikeyan Selvaraj</b><small>Founder, Pro Foodpreneur School</small></span>
+          <span class="plate-badge">Your coach</span>
+        </div>
+      </div>
+
+      <div class="coach-copy reveal">
+        <span class="eyebrow">Who you'll learn from</span>
+        <h2>From a 60 sq ft kitchen to 9,000 entrepreneurs.</h2>
+        <p class="coach-role">Coach Karthikeyan Selvaraj · Founder, Pro Foodpreneur School</p>
+        <p>Coach Karthikeyan didn't start in food. He was an engineer at General Motors, with a stable job and a predictable future ahead of him. Then he walked away from it — for a 60 sq ft kitchen and a rent of just ₹5,000 a month.</p>
+        <p>That small kitchen grew into <strong>one of India's most respected food business mentorship ecosystems</strong>, built on what actually works in the real world, not theory borrowed from a classroom.</p>
+        <p>Every framework he teaches has been tested where it matters: in <strong>home kitchens, cloud kitchens, QSRs, cafés and fine dining</strong>, across India and beyond.</p>
+
+        <div class="journey reveal">
+          <div class="jstep"><b>Ex-GM</b><span>Started as an engineer at General Motors</span></div>
+          <div class="jstep"><b><span data-count="60">60</span> sq ft</b><span>First kitchen, ₹5,000 a month rent</span></div>
+          <div class="jstep"><b><span data-count="9000">9,000</span>+</b><span>Entrepreneurs trained across 8 countries</span></div>
+          <div class="jstep"><b><span data-count="500">500</span>+</b><span>Personally mentored through the VIP Mentorship Program</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="press reveal">
+      <p class="press-lab">As featured in</p>
+      <div class="logos">
+        <!-- COPY THIS LINE to add a logo. If the image is missing, the name shows instead. -->
+        <figure class="logo" data-name="The Times of India"><img src="assets/images/press/times-of-india.png" alt="The Times of India" loading="lazy"></figure>
+        <figure class="logo" data-name="Bangalore Times"><img src="assets/images/press/bangalore-times.png" alt="Bangalore Times" loading="lazy"></figure>
+        <figure class="logo" data-name="Deccan Herald"><img src="assets/images/press/deccan-herald.png" alt="Deccan Herald" loading="lazy"></figure>
+        <figure class="logo" data-name="Moneycontrol"><img src="assets/images/press/moneycontrol.png" alt="Moneycontrol" loading="lazy"></figure>
+        <figure class="logo" data-name="Josh Talks"><img src="assets/images/press/josh-talks.png" alt="Josh Talks" loading="lazy"></figure>
+        <figure class="logo" data-name="Jaya TV"><img src="assets/images/press/jaya-tv.png" alt="Jaya TV" loading="lazy"></figure>
+        <figure class="logo" data-name="Urban Talks"><img src="assets/images/press/urban-talks.png" alt="Urban Talks" loading="lazy"></figure>
+        <figure class="logo" data-name="Getting to Aha"><img src="assets/images/press/getting-to-aha.png" alt="Getting to Aha" loading="lazy"></figure>
+        <figure class="logo" data-name="Boss Wallah"><img src="assets/images/press/boss-wallah.png" alt="Boss Wallah" loading="lazy"></figure>
+        <figure class="logo" data-name="Bakers Technology Fair"><img src="assets/images/press/bakers-technology-fair.png" alt="Bakers Technology Fair" loading="lazy"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 07 · VOICES ═══════════════════ -->
+<!-- ══════════════════════ SECTION H · WHAT ATTENDEES SAY (reels) ══════════════════════ -->
+<section class="sec voices surface-cream" id="voices">
+  <div class="sec-in">
+    <div class="sec-head sec-head--split reveal">
+      <div>
+        <span class="eyebrow">What attendees say</span>
+        <h2>Straight from Edition 1.</h2>
+        <p>Unscripted words from people who sat at the table last time. Tap a reel to play it with sound.</p>
+      </div>
+      <div class="car-nav">
+        <button class="iconbtn" type="button" data-prev aria-label="Previous">←</button>
+        <button class="iconbtn" type="button" data-next aria-label="Next">→</button>
+      </div>
+    </div>
+
+    <div class="car" data-carousel>
+      <div class="car-track">
+
+        <!-- ▼ COPY THIS BLOCK to add a VIDEO testimonial (vertical 9:16 MP4).
+             Change: video path, name, business, and the one-line quote.
+             Optional cover image: add  poster="assets/images/testimonials/name.jpg"  inside <video ...> -->
+        <article class="reel">
+          <div class="media media--reel" data-label="Testimonial video · 9:16">
+            <video playsinline preload="metadata">
+              <source src="https://youtube.com/shorts/p59Wnb2uHxM?si=mqOuiAZDineh3BhQ" type="video/mp4">
+            </video>
+          </div>
+          <span class="reel-prog"><i></i></span>
+          <button class="reel-play" type="button" aria-label="Play testimonial"><span>▶</span></button>
+          <div class="reel-cap">
+            <b>Attendee name</b>
+            <small>Business name · City</small>
+            <q>One line they said on camera goes here.</q>
+          </div>
+        </article>
+        <!-- ▲ END BLOCK -->
+
+        <article class="reel">
+          <div class="media media--reel" data-label="Testimonial video · 9:16">
+            <video playsinline preload="metadata">
+              <source src="assets/videos/testimonials/attendee-02.mp4#t=0.5" type="video/mp4">
+            </video>
+          </div>
+          <span class="reel-prog"><i></i></span>
+          <button class="reel-play" type="button" aria-label="Play testimonial"><span>▶</span></button>
+          <div class="reel-cap"><b>Attendee name</b><small>Business name · City</small><q>One line they said on camera goes here.</q></div>
+        </article>
+
+        <article class="reel">
+          <div class="media media--reel" data-label="Testimonial video · 9:16">
+            <video playsinline preload="metadata">
+              <source src="assets/videos/testimonials/attendee-03.mp4#t=0.5" type="video/mp4">
+            </video>
+          </div>
+          <span class="reel-prog"><i></i></span>
+          <button class="reel-play" type="button" aria-label="Play testimonial"><span>▶</span></button>
+          <div class="reel-cap"><b>Attendee name</b><small>Business name · City</small><q>One line they said on camera goes here.</q></div>
+        </article>
+
+        <!-- ▼ COPY THIS BLOCK to add a WRITTEN testimonial (same 9:16 size as the reels) -->
+        <article class="reel reel--quote">
+          <div class="quote-card">
+            <span class="qmark" aria-hidden="true">“</span>
+            <p>Paste the attendee's written testimonial here — two or three honest sentences work best.</p>
+            <div class="qwho">
+              <span class="media qav" data-label=""><img src="assets/images/testimonials/attendee-04.jpg" alt="" loading="lazy"></span>
+              <span><b>Attendee name</b><small>Business name · City</small></span>
+            </div>
+          </div>
+        </article>
+        <!-- ▲ END BLOCK -->
+
+        <article class="reel">
+          <div class="media media--reel" data-label="Testimonial video · 9:16">
+            <video playsinline preload="metadata">
+              <source src="assets/videos/testimonials/attendee-05.mp4#t=0.5" type="video/mp4">
+            </video>
+          </div>
+          <span class="reel-prog"><i></i></span>
+          <button class="reel-play" type="button" aria-label="Play testimonial"><span>▶</span></button>
+          <div class="reel-cap"><b>Attendee name</b><small>Business name · City</small><q>One line they said on camera goes here.</q></div>
+        </article>
+
+      </div>
+      <div class="car-bar"><i></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 08 · STORIES ═══════════════════ -->
+<!-- ══════════════════════ SECTION J · SUCCESS STORIES (stacking case files) ══════════════════════ -->
+<section class="sec stories surface-paper" id="stories">
+  <div class="sec-in">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Success stories</span>
+      <h2>Brands built with this framework.</h2>
+      <p>Six founders who went through Pro Foodpreneur mentorship — and what they built with it.</p>
+    </div>
+
+    <div class="stack" id="stack">
+      <!-- ▼ COPY THIS BLOCK to add a story. Photo: assets/images/stories/… (any size, shown 4:5) -->
+      <article class="story">
+        <div class="story-in">
+          <div class="media" data-label="Founder photo · 4:5"><img src="image&video/Cremewich.webp" alt="Ruchika, founder of Cremewich" loading="lazy"></div>
+          <div class="story-body">
+            <div class="story-top"><span class="story-tag">Cookie Ice-Cream Sandwich</span><span class="story-no"></span></div>
+            <h3>Cremewich</h3>
+            <p>India's first cookie ice-cream sandwich brand, built from scratch with signature recipes, standout packaging, and a scalable format mentored through Pro Foodpreneur.</p>
+            <div class="story-who"><span class="who-av">R</span><span><b>Ruchika</b><small>Founder · Bangalore, Karnataka</small></span></div>
+          </div>
+        </div>
+      </article>
+      <!-- ▲ END BLOCK -->
+
+      <article class="story">
+        <div class="story-in">
+          <div class="media" data-label="Founder photo · 4:5"><img src="image&video/Salad Boy.webp" alt="Anish, founder of Salad Boy" loading="lazy"></div>
+          <div class="story-body">
+            <div class="story-top"><span class="story-tag">Healthy Eating · Cloud Kitchen</span><span class="story-no"></span></div>
+            <h3>Salad Boy</h3>
+            <p>A health-forward cloud kitchen brand built on lean menu design, precise costing, and scalable delivery operations, developed in the mentorship programme.</p>
+            <div class="story-who"><span class="who-av">A</span><span><b>Anish</b><small>Founder · Chennai, Tamil Nadu</small></span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="story">
+        <div class="story-in">
+          <div class="media" data-label="Founder photo · 4:5"><img src="image&video/Saffron Royal.webp" alt="Sridhar Veepuri, founder of Saffron Royal" loading="lazy"></div>
+          <div class="story-body">
+            <div class="story-top"><span class="story-tag">Biryani Brand · Automation &amp; Scale</span><span class="story-no"></span></div>
+            <h3>Saffron Royal</h3>
+            <p>Launched end-to-end — branding, menu design and costing — then scaled with automation to cut chef-dependency. Now runs on multiple revenue streams, with a second brand and a second outlet underway.</p>
+            <div class="story-who"><span class="who-av">S</span><span><b>Sridhar Veepuri</b><small>Founder · Bangalore, Karnataka</small></span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="story">
+        <div class="story-in">
+          <div class="media" data-label="Founder photo · 4:5"><img src="image&video/Pastry Bay.webp" alt="Shwetha, founder of Pastry Bay" loading="lazy"></div>
+          <div class="story-body">
+            <div class="story-top"><span class="story-tag">Home Bakery · Trademark &amp; Scale</span><span class="story-no"></span></div>
+            <h3>Pastry Bay</h3>
+            <p>A decade-old home-baking passion turned into a protected, professional brand: trademark secured, systems documented, and a plan built to scale from ₹50K to ₹1L+ in monthly profit.</p>
+            <div class="story-who"><span class="who-av">S</span><span><b>Shwetha</b><small>Founder · Chennai, Tamil Nadu</small></span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="story">
+        <div class="story-in">
+          <div class="media" data-label="Founder photo · 4:5"><img src="image&video/Zesty Leaf.webp" alt="Sona N, founder of Zesty Leaf" loading="lazy"></div>
+          <div class="story-body">
+            <div class="story-top"><span class="story-tag">Healthy Meals · Corporate &amp; Bulk Orders</span><span class="story-no"></span></div>
+            <h3>Zesty Leaf</h3>
+            <p>Streamlined operations, relocated to a stronger location, then connected with gyms and corporate offices to open bulk-order channels. Now fulfilling regular corporate orders.</p>
+            <div class="story-who"><span class="who-av">S</span><span><b>Sona N</b><small>Founder · Bangalore, Karnataka</small></span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="story">
+        <div class="story-in">
+          <div class="media" data-label="Founders photo · 4:5"><img src="image&video/AURAA Cafe.webp" alt="Ujwal and Rohini, founders of AURAA Cafe" loading="lazy"></div>
+          <div class="story-body">
+            <div class="story-top"><span class="story-tag">Premium Cafe · Health-Forward Concept</span><span class="story-no"></span></div>
+            <h3>AURAA Cafe</h3>
+            <p>A gift-hamper expert and a home baker with five years of experience left their individual crafts to open a premium lifestyle cafe — a calm, health-forward western concept that launched with a focused 16-item menu built through the mentorship framework.</p>
+            <div class="story-who"><span class="who-av">UR</span><span><b>Ujwal &amp; Rohini</b><small>Founders · Sanjay Nagar, Bengaluru</small></span></div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sec-cta reveal">
+      <p>Want <b>your business</b> on this list?</p>
+      <a class="btn btn--fire" href="#reserve">Reserve my seat · ₹2,499</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 09 · GALLERY ═══════════════════ -->
+<!-- ══════════════════════ SECTION I · INSIDE EDITION 1 (contact sheet + lightbox) ══════════════════════ -->
+<section class="sec gallery surface-deep" id="gallery">
+  <div class="sec-in">
+    <div class="sec-head sec-head--split reveal">
+      <div>
+        <span class="eyebrow">Inside Edition 1</span>
+        <h2>Moments from the room.</h2>
+        <p>Tap any frame to open it full-screen. Swipe or use the arrow keys to move through.</p>
+      </div>
+      <span class="gal-count"><b id="galCount">0</b> frames</span>
+    </div>
+
+    <span class="sprockets" aria-hidden="true"></span>
+    <div class="contact" id="galleryGrid">
+      <!-- ▼ COPY THIS BLOCK to add a PHOTO. data-caption is optional (shown on hover + in full-screen) -->
+      <button class="frame" type="button" data-caption="">
+        <span class="media" data-label="Gallery photo · 4:3"><img src="image&video/g1.webp" alt="Edition 1 of the Pro Foodpreneur Intensive" loading="lazy"></span>
+      </button>
+      <!-- ▲ END BLOCK -->
+      <button class="frame" type="button" data-caption="">
+        <span class="media" data-label="Gallery photo · 4:3"><img src="image&video/t1.webp" alt="Edition 1 of the Pro Foodpreneur Intensive" loading="lazy"></span>
+      </button>
+      <button class="frame" type="button" data-caption="">
+        <span class="media" data-label="Gallery photo · 4:3"><img src="image&video/t2.webp" alt="Edition 1 of the Pro Foodpreneur Intensive" loading="lazy"></span>
+      </button>
+
+      <!-- ▼ COPY THIS BLOCK to add a VIDEO clip (put the same path in BOTH places) -->
+      <button class="frame frame--video" type="button" data-video="assets/videos/gallery/edition1-clip-01.mp4" data-caption="">
+        <span class="media" data-label="Gallery video · 4:3"><video muted playsinline loop preload="metadata"><source src="assets/videos/gallery/edition1-clip-01.mp4#t=0.5" type="video/mp4"></video></span>
+      </button>
+      <!-- ▲ END BLOCK -->
+
+      <button class="frame" type="button" data-caption="">
+        <span class="media" data-label="Gallery photo · 4:3"><img src="image&video/t3.webp" alt="Edition 1 of the Pro Foodpreneur Intensive" loading="lazy"></span>
+      </button>
+      <button class="frame" type="button" data-caption="">
+        <span class="media" data-label="Gallery photo · 4:3"><img src="image&video/t4.webp" alt="Edition 1 of the Pro Foodpreneur Intensive" loading="lazy"></span>
+      </button>
+      <button class="frame" type="button" data-caption="">
+        <span class="media" data-label="Gallery photo · 4:3"><img src="image&video/s.webp" alt="Edition 1 of the Pro Foodpreneur Intensive" loading="lazy"></span>
+      </button>
+      <button class="frame" type="button" data-caption="">
+        <span class="media" data-label="Gallery photo · 4:3"><img src="assets/images/gallery/edition1-07.jpg" alt="Edition 1 of the Pro Foodpreneur Intensive" loading="lazy"></span>
+      </button>
+    </div>
+    <span class="sprockets" aria-hidden="true"></span>
+  </div>
+</section>
+
+<!-- ═══════════════════ 10 · BONUS ═══════════════════ -->
+<!-- ══════════════════════ SECTION G · BONUSES (take-home kit) ══════════════════════ -->
+<section class="sec bonus surface-ink" id="bonus">
+  <div class="sec-in">
+    <div class="sec-head sec-head--split reveal">
+      <div>
+        <span class="eyebrow">Bonuses</span>
+        <h2>Your take-home kit.</h2>
+        <p>Six files that go home with you — included with your seat.</p>
+      </div>
+      <div class="kit-count"><b id="kitCount">06</b><span>/ <span id="kitTotal">06</span> files<br>unlocked</span></div>
+    </div>
+
+    <div class="kit" id="kit">
+      <!-- COPY THIS BLOCK to add a bonus. --tab colour: --brand-gold / --brand-amber / --brand-coral.
+           Icons available: i-doc, i-flag, i-spark, i-grid, i-layout, i-check -->
+      <article class="kitcard" style="--tab:var(--brand-gold)">
+        <div class="kitcard-in">
+          <span class="kitcard-tab">PDF</span>
+          <span class="kitcard-ic"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg></span>
+          <h3>Intensive Summary PDF</h3>
+          <p>The key frameworks and formulas from the day, in one document.</p>
+          <div class="kitcard-foot"><span class="kf-no"></span><b>Included</b></div>
+        </div>
+      </article>
+      <!-- END BLOCK -->
+      <article class="kitcard" style="--tab:var(--brand-amber)">
+        <div class="kitcard-in">
+          <span class="kitcard-tab">Framework</span>
+          <span class="kitcard-ic"><svg viewBox="0 0 24 24"><use href="#i-flag"/></svg></span>
+          <h3>Brand Launch Framework + AI prompts</h3>
+          <p>The brand launch framework we teach, with the prompts that go with it.</p>
+          <div class="kitcard-foot"><span class="kf-no"></span><b>Included</b></div>
+        </div>
+      </article>
+      <article class="kitcard" style="--tab:var(--brand-coral)">
+        <div class="kitcard-in">
+          <span class="kitcard-tab">Prompts</span>
+          <span class="kitcard-ic"><svg viewBox="0 0 24 24"><use href="#i-spark"/></svg></span>
+          <h3>AI research prompts</h3>
+          <p>Prompts for competitor research, market research and your equipment list.</p>
+          <div class="kitcard-foot"><span class="kf-no"></span><b>Included</b></div>
+        </div>
+      </article>
+      <article class="kitcard" style="--tab:var(--brand-gold)">
+        <div class="kitcard-in">
+          <span class="kitcard-tab">Canva</span>
+          <span class="kitcard-ic"><svg viewBox="0 0 24 24"><use href="#i-grid"/></svg></span>
+          <h3>Logo and menu templates</h3>
+          <p>Editable Canva templates for your logo and your menu.</p>
+          <div class="kitcard-foot"><span class="kf-no"></span><b>Included</b></div>
+        </div>
+      </article>
+      <article class="kitcard" style="--tab:var(--brand-amber)">
+        <div class="kitcard-in">
+          <span class="kitcard-tab">Sheets</span>
+          <span class="kitcard-ic"><svg viewBox="0 0 24 24"><use href="#i-layout"/></svg></span>
+          <h3>Cloud kitchen layouts and planning sheets</h3>
+          <p>Home and multi-brand kitchen layouts, a planning guide, and a financial metrics sheet.</p>
+          <div class="kitcard-foot"><span class="kf-no"></span><b>Included</b></div>
+        </div>
+      </article>
+      <article class="kitcard" style="--tab:var(--brand-coral)">
+        <div class="kitcard-in">
+          <span class="kitcard-tab">SOPs</span>
+          <span class="kitcard-ic"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span>
+          <h3>Team and operations toolkit</h3>
+          <p>An opening and closing checklist, an employee onboarding form, a marination SOP and influencer marketing guidelines.</p>
+          <div class="kitcard-foot"><span class="kf-no"></span><b>Included</b></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sec-cta reveal">
+      <p>Included in the price. <b>Nothing extra to pay.</b> Your certificate is included too.</p>
+      <a class="btn btn--fire" href="#reserve">Reserve my seat · ₹2,499</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 11 · GLANCE ═══════════════════ -->
+<!-- ══════════════════════ SECTION F · DAY AT A GLANCE (event pass) ══════════════════════ -->
+<section class="sec glance surface-paper" id="glance">
+  <div class="sec-in">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Your day, at a glance</span>
+      <h2>Here's your pass.</h2>
+      <p>Everything you need to plan around Saturday. Save it to your calendar in one tap.</p>
+    </div>
+
+    <div class="pass reveal">
+      <div class="pass-main">
+        <div class="pass-top"><span>Pro Foodpreneur · Intensive</span><span>Edition 02 · Admit one</span></div>
+        <div class="pass-title">One day. One table. Your business.</div>
+        <div class="pass-cells">
+          <div class="cell"><small>Date</small><b data-ev="full">Sat, 10 Oct 2026</b><span>Edition 02</span></div>
+          <div class="cell"><small>Timing</small><b>9:00 AM – 6:00 PM</b><span>Full day, in person</span></div>
+          <div class="cell"><small>Location</small><b>Bannerghatta Rd, Bangalore</b><span>Exact venue shared after registration</span></div>
+          <div class="cell"><small>Breaks</small><b>2 tea breaks + lunch</b><span>Food is on us</span></div>
+        </div>
+        <div class="pass-actions">
+          <button class="chipbtn" type="button" id="icsBtn">📅 Add to calendar</button>
+          <a class="chipbtn" id="gcalBtn" href="#" target="_blank" rel="noopener">Google Calendar ↗</a>
+          <a class="chipbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Bannerghatta+Road+Bangalore" target="_blank" rel="noopener">📍 See the area ↗</a>
+        </div>
+      </div>
+      <div class="pass-stub">
+        <div class="stub-seats">
+          <span class="stub-lab">Doors</span>
+          <span class="stub-num">9<sup>AM</sup></span>
+          <span class="stub-lab">to 6 PM</span>
+        </div>
+        <span class="barcode" aria-hidden="true"></span>
+        <span class="stub-code">PFI-02 · BLR</span>
+      </div>
+    </div>
+
+    <div class="food-note reveal">
+      <span class="food-ic" aria-hidden="true">🍽</span>
+      <div><b>Food is on us.</b><span>Lunch, tea breaks and materials are all included.</span></div>
+      <a class="btn btn--fire" href="#reserve">Reserve my seat</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 12 · RESERVE ═══════════════════ -->
+<!-- ══════════════════════ SECTION L · YOUR INVESTMENT (holo pass) ══════════════════════ -->
+<section class="sec reserve surface-peach" id="reserve">
+  <div class="sec-in res-grid">
+    <div class="res-copy">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Your investment</span>
+        <h2>One seat. Everything included.</h2>
+        <p>One day in Bangalore, working on your own food business with Coach Karthikeyan.</p>
+      </div>
+      <ul class="incl reveal">
+        <li><i>✓</i><span><b>A full-day seat at the one table</b><small><span data-ev="longday">Saturday 10 October</span> · 9:00 AM – 6:00 PM</small></span></li>
+        <li><i>✓</i><span><b>Lunch + 2 tea breaks</b><small>Food is on us</small></span></li>
+        <li><i>✓</i><span><b>All materials on the day</b><small>Just bring yourself — and a notebook if you like</small></span></li>
+        <li><i>✓</i><span><b>Certificate</b><small>Included with your seat</small></span></li>
+        <li><i>✓</i><span><b>The 6-file bonus kit</b><small>Templates, layouts, checklists and AI prompts</small></span></li>
+      </ul>
+    </div>
+
+    <div class="holo reveal">
+      <div class="holo-card" id="holo">
+        <div class="hc-top"><span>Intensive seat</span><span>Edition 02</span></div>
+        <div class="hc-price">₹2,499<small>all-inclusive</small></div>
+        <p class="hc-sub"><span data-ev="fullshort">Sat 10 Oct</span> · Bannerghatta Rd, Bangalore</p>
+        <div class="hc-rule" aria-hidden="true"></div>
+        <div class="seatbar-lab"><span>Certificate &amp; bonus kit included</span><span>No extras to pay</span></div>
+        <!-- PAYMENT: set PAYMENT_LINK in script.js — every .js-pay button updates -->
+        <a class="btn btn--fire js-pay" href="#reserve">Pay ₹2,499 &amp; reserve</a>
+        <p class="hc-fine">Exact venue shared right after registration.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 13 · FAQ ═══════════════════ -->
+<!-- ══════════════════════ SECTION M · FAQ ══════════════════════ -->
+<section class="sec faq surface-ink" id="faq">
+  <div class="sec-in faq-grid">
+    <div class="faq-side reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions, answered.</h2>
+      <label class="faq-search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></g></svg>
+        <input type="search" id="faqSearch" placeholder="Search a question…" aria-label="Search questions">
+      </label>
+      <div class="contact-card">
+        <b>Still unsure?</b>
+        <p>Talk to the team before you book.</p>
+        <div class="contact-links">
+          <a class="chipbtn" href="tel:+919187047744">📞 +91 91870 47744</a>
+          <a class="chipbtn" href="mailto:hello@profoodpreneur.com">✉ hello@profoodpreneur.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-list" id="faqList">
+      <!-- COPY THIS BLOCK to add a question -->
+      <details class="faq-item">
+        <summary>What exactly is the Pro Foodpreneur Intensive?<span class="faq-x" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p>A one-day, in-person bootcamp on Foundation, Branding and Execution. You work on your own business through the day instead of just listening.</p></div>
+      </details>
+      <!-- END BLOCK -->
+      <details class="faq-item">
+        <summary>Where exactly is the venue?<span class="faq-x" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p>The Intensive is near Bannerghatta Road, Bangalore. The exact address is shared after you register.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>What's included in the price?<span class="faq-x" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p>A certificate, a bonus pack (templates, layouts, checklists and AI prompts), and all meals: two tea breaks and lunch.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>I've never run a food business before. Is this still for me?<span class="faq-x" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p>Yes. It's built for people starting out and people already running a business. The Foundation part brings everyone up to speed before the exercises begin.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>I'm already running a food business. Is this still helpful for me?<span class="faq-x" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p>Yes. The Execution part — 1 Crore Revenue Roadmap, Hiring &amp; Managing Your Kitchen Team, Unit Economics — is most useful if you're already running a business: fixing margins, building a team that doesn't depend on you, and planning growth.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need to bring anything?<span class="faq-x" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p>Just yourself, and a notebook if you'd like one. All other materials are provided on the day.</p></div>
+      </details>
+      <p class="faq-empty" id="faqEmpty" hidden>No match for that — call <a href="tel:+919187047744">+91 91870 47744</a> and we'll answer it directly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 14 · FINAL ═══════════════════ -->
+<!-- ══════════════════════ SECTION N · FINAL CTA ══════════════════════ -->
+<section class="sec final surface-deep" id="final">
+  <!-- OPTIONAL background video/photo — uncomment one line:
+       <div class="final-media" aria-hidden="true"><video autoplay muted loop playsinline><source src="assets/videos/final-bg.mp4" type="video/mp4"></video></div>
+       <div class="final-media" aria-hidden="true"><img src="assets/images/final-bg.jpg" alt=""></div>
+  -->
+  <div class="final-marquee" aria-hidden="true">
+    <div data-marquee><span>One table <em>✦</em> One day <em>✦</em> Your business <em>✦</em> Your plan <em>✦</em> One table <em>✦</em> One day <em>✦</em> Your business <em>✦</em> Your plan <em>✦</em></span></div>
+  </div>
+  <div class="sec-in">
+    <span class="eyebrow eyebrow--c">Reserve your seat</span>
+    <h2>Saturday could be the day it all clicks.</h2>
+    <p>One day in Bangalore, working on your own food business with Coach Karthikeyan.</p>
+    <div class="final-cta">
+      <a class="btn btn--fire js-pay" href="#reserve">Reserve my seat now · ₹2,499</a>
+      <a class="btn btn--glass" href="tel:+919187047744">Call +91 91870 47744</a>
+    </div>
+    <div class="final-meta">
+      <span><b data-ev="fullshort">Sat 10 Oct</b> · 9 AM – 6 PM</span>
+      <span><b>Bannerghatta Rd</b>, Bangalore</span>
+      <span><b>Lunch</b> &amp; bonus kit included</span>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="brandmark"><span class="bm">PF</span><span><b>Pro Foodpreneur</b><small>Intensive</small></span></div>
+    <p>Questions? <a href="mailto:hello@profoodpreneur.com">hello@profoodpreneur.com</a> · <a href="tel:+919187047744">+91 91870 47744</a></p>
+    <p>© <span data-year>2026</span> Pro Foodpreneur School</p>
+  </div>
+</footer>
+
+<!-- sticky booking bar (appears after the hero, hides near the price & final CTA) -->
+<div class="stickybar" id="stickybar" aria-hidden="true">
+  <div class="sb-info"><small>Intensive seat</small><b>₹2,499</b></div>
+  <span class="sb-left"><span class="dot"></span><span data-ev="short">10 Oct</span></span>
+  <a class="btn btn--fire js-pay" href="#reserve" tabindex="-1">Reserve now</a>
+</div>
+
+<!-- full-screen viewer for the gallery -->
+<dialog class="lb" id="lightbox" aria-label="Photo viewer">
+  <div class="lb-top">
+    <span class="lb-count" id="lbCount">1 / 1</span>
+    <button class="iconbtn" type="button" id="lbClose" aria-label="Close">✕</button>
+  </div>
+  <div class="lb-stage" id="lbStage"></div>
+  <div class="lb-bot">
+    <button class="iconbtn" type="button" id="lbPrev" aria-label="Previous">←</button>
+    <p class="lb-cap" id="lbCap"></p>
+    <button class="iconbtn" type="button" id="lbNext" aria-label="Next">→</button>
+  </div>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>

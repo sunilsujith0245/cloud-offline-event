@@ -1099,37 +1099,37 @@ runScroll();
 
   const galleryImages = [
     {
-      src: "image&video/g1.webp",
+      src: "g1.webp",
       layout: "hero",
       position: "center 100%",
       alt: "Edition 1 group photo"
     },
     {
-      src: "image&video/t1.webp",
+      src: "t1.webp",
       layout: "tile",
       position: "center 25%",
       alt: "Coach at Edition 1"
     },
     {
-      src: "image&video/t2.webp",
+      src: "t2.webp",
       layout: "tile",
       position: "center 35%",
       alt: "Menu psychology session"
     },
     {
-      src: "image&video/t3.webp",
+      src: "t3.webp",
       layout: "tile",
       position: "center 25%",
       alt: "Coach teaching attendees"
     },
     {
-      src: "image&video/t4.webp",
+      src: "t4.webp",
       layout: "tile",
       position: "center 50%",
       alt: "Attendees inside the session"
     },
     {
-      src: "image&video/s.webp",
+      src: "s.webp",
       layout: "wide",
       position: "center 50%",
       alt: "Edition 1 event moments"

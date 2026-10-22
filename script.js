@@ -1090,76 +1090,394 @@ runScroll();
 
 
 
+// (() => {
+//   const grid = document.getElementById(
+//     "edition-gallery-grid"
+//   );
+
+//   if (!grid) return;
+
+//   const galleryImages = [
+//     {
+//       src: "image&video/g1.webp",
+//       layout: "hero",
+//       position: "center 100%",
+//       alt: "Edition 1 group photo"
+//     },
+//     {
+//       src: "image&video/t1.webp",
+//       layout: "tile",
+//       position: "center 25%",
+//       alt: "Coach at Edition 1"
+//     },
+//     {
+//       src: "image&video/t2.webp",
+//       layout: "tile",
+//       position: "center 35%",
+//       alt: "Menu psychology session"
+//     },
+//     {
+//       src: "image&video/t3.webp",
+//       layout: "tile",
+//       position: "center 25%",
+//       alt: "Coach teaching attendees"
+//     },
+//     {
+//       src: "image&video/t4.webp",
+//       layout: "tile",
+//       position: "center 50%",
+//       alt: "Attendees inside the session"
+//     },
+//     {
+//       src: "image&video/s.webp",
+//       layout: "wide",
+//       position: "center 50%",
+//       alt: "Edition 1 event moments"
+//     }
+//   ];
+
+//   galleryImages.forEach((photo) => {
+//     const item = document.createElement("div");
+
+//     item.className =
+//       `edition-gallery__item edition-gallery__item--${photo.layout}`;
+
+//     const img = document.createElement("img");
+
+//     img.alt = photo.alt;
+//     img.loading = "lazy";
+//     img.decoding = "async";
+//     img.style.objectPosition = photo.position;
+
+//     img.addEventListener("load", () => {
+//       img.classList.add("is-loaded");
+//     });
+
+//     img.addEventListener("error", () => {
+//       item.classList.add("image-error");
+//     });
+
+//     img.src = photo.src;
+
+//     item.appendChild(img);
+//     grid.appendChild(item);
+//   });
+// })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   INSIDE EDITION — sliding gallery
+   ───────────────────────────────────────────────────────────────────
+   HOW TO ADD PHOTOS / A NEW EDITION
+   1. Put the photo files in your  image&video/  folder.
+   2. Add them to the EDITIONS list below. A new edition = copy one
+      { name: ..., photos: [...] } block and change the names.
+      The buttons, counter, slide and animation are made automatically.
+
+   LAYOUT — each row of the grid has 6 parts:
+     "hero" = full row (6)       → wide group photo / banner
+     "half" = half a row (3)     → landscape photo (3:2), no crop
+     "tile" = a third (2)        → portrait / standing photo (4:5)
+     "wide" = two-thirds (4)     → landscape photo, same height as a tile
+
+   Rows that line up perfectly:
+     hero              |  half + half
+     tile + tile + tile|  tile + wide   |  wide + tile
+   (If a row is left short, the last photo is stretched to fill it,
+    so the grid never shows a gap.)
+
+   POSITION — which part of the photo stays visible when it is cropped:
+     "center 50%" = middle   "center 25%" = keep the top (faces)
+     "center 100%" = keep the bottom
+   ═══════════════════════════════════════════════════════════════════ */
+
+const EDITIONS = [
+  {
+    name: "Edition 1",
+    photos: [
+      { src: "image&video/g1.webp", layout: "hero", position: "center 100%", alt: "Edition 1 group photo" },
+      { src: "image&video/t1.webp", layout: "tile", position: "center 25%",  alt: "Coach at Edition 1" },
+      { src: "image&video/t2.webp", layout: "tile", position: "center 35%",  alt: "Menu psychology session" },
+      { src: "image&video/t3.webp", layout: "tile", position: "center 25%",  alt: "Coach teaching attendees" },
+      { src: "image&video/t4.webp", layout: "tile", position: "center 50%",  alt: "Attendees inside the session" },
+      { src: "image&video/s.webp",  layout: "wide", position: "center 50%",  alt: "Edition 1 event moments" }
+    ]
+  },
+
+  {
+    name: "Edition 2",
+    photos: [
+      { src: "image&video/E2-7.jpeg", layout: "half", position: "center 55%", alt: "Edition 2 attendees with Coach Karthikeyan" },
+      { src: "image&video/E2-5.jpeg", layout: "half", position: "center 40%", alt: "Coach Karthikeyan with Edition 2 attendees" },
+      { src: "image&video/E2 1.png", layout: "tile", position: "center 30%", alt: "Coach Karthikeyan speaking at Edition 2" },
+      { src: "image&video/E2-2.png", layout: "tile", position: "center 35%", alt: "Coach Karthikeyan explaining a framework" },
+      { src: "image&video/E2-3.png", layout: "tile", position: "center 32%", alt: "Coach Karthikeyan with the room" },
+      { src: "image&video/E2-4.jpeg", layout: "half", position: "center 45%", alt: "Edition 2 attendees around the table" },
+      { src: "image&video/E2-6.jpeg", layout: "half", position: "center 45%", alt: "Edition 2 group selfie in the session room" }
+    ]
+  }
+
+  // ── EDITION 3 ─────────────────────────────────────────────────────
+  // To switch it on: put a comma after the Edition 2 block above,
+  // delete the two lines marked DELETE, then set your file names.
+  /* DELETE THIS LINE
+  {
+    name: "Edition 3",
+    photos: [
+      { src: "image&video/e3-1.webp", layout: "hero", position: "center 50%", alt: "Edition 3 group photo" },
+      { src: "image&video/e3-2.webp", layout: "tile", position: "center 30%", alt: "Edition 3 session" },
+      { src: "image&video/e3-3.webp", layout: "tile", position: "center 30%", alt: "Edition 3 session" },
+      { src: "image&video/e3-4.webp", layout: "tile", position: "center 30%", alt: "Edition 3 session" },
+      { src: "image&video/e3-5.webp", layout: "half", position: "center 50%", alt: "Edition 3 attendees" },
+      { src: "image&video/e3-6.webp", layout: "half", position: "center 50%", alt: "Edition 3 attendees" }
+    ]
+  }
+  DELETE THIS LINE */
+];
+
+const GALLERY_SETTINGS = {
+  startAt: "latest",     // "latest" = open on the newest edition, "first" = Edition 1
+  autoplaySeconds: 3    // slides by itself every 7 s until someone taps; 0 = off
+};
+
+
+/* ═══════════════════ no edits needed below ═══════════════════ */
 (() => {
-  const grid = document.getElementById(
-    "edition-gallery-grid"
-  );
+  const root     = document.getElementById("edition-gallery");
+  const track    = document.getElementById("edition-gallery-track");
+  const viewport = document.getElementById("eg-viewport");
+  if (!root || !track || !viewport || !EDITIONS.length) return;
 
-  if (!grid) return;
+  const tabsWrap = document.getElementById("eg-tabs");
+  const pill     = document.getElementById("eg-pill");
+  const eyebrow  = document.getElementById("eg-eyebrow");
+  const countEl  = document.getElementById("eg-count");
+  const prevBtn  = document.getElementById("eg-prev");
+  const nextBtn  = document.getElementById("eg-next");
+  const bar      = document.getElementById("eg-bar");
 
-  const galleryImages = [
-    {
-      src: "g1.webp",
-      layout: "hero",
-      position: "center 100%",
-      alt: "Edition 1 group photo"
-    },
-    {
-      src: "t1.webp",
-      layout: "tile",
-      position: "center 25%",
-      alt: "Coach at Edition 1"
-    },
-    {
-      src: "t2.webp",
-      layout: "tile",
-      position: "center 35%",
-      alt: "Menu psychology session"
-    },
-    {
-      src: "t3.webp",
-      layout: "tile",
-      position: "center 25%",
-      alt: "Coach teaching attendees"
-    },
-    {
-      src: "t4.webp",
-      layout: "tile",
-      position: "center 50%",
-      alt: "Attendees inside the session"
-    },
-    {
-      src: "s.webp",
-      layout: "wide",
-      position: "center 50%",
-      alt: "Edition 1 event moments"
-    }
-  ];
+  const REDUCE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const SPAN   = { hero: 6, half: 3, tile: 2, wide: 4 };
+  const last   = EDITIONS.length - 1;
+  const pad    = (n) => String(n).padStart(2, "0");
 
-  galleryImages.forEach((photo) => {
-    const item = document.createElement("div");
+  const slides = [], tabs = [];
+  let index = GALLERY_SETTINGS.startAt === "first" ? 0 : last;
+  let seen = !("IntersectionObserver" in window);   // photos animate in the first time the section is seen
 
-    item.className =
-      `edition-gallery__item edition-gallery__item--${photo.layout}`;
+  /* ── build every slide ── */
+  EDITIONS.forEach((ed, e) => {
+    const slide = document.createElement("div");
+    slide.className = "edition-gallery__slide";
+    slide.id = "eg-slide-" + e;
+    slide.setAttribute("role", "tabpanel");
+    slide.setAttribute("aria-label", ed.name);
 
-    const img = document.createElement("img");
+    const grid = document.createElement("div");
+    grid.className = "edition-gallery__grid";
 
-    img.alt = photo.alt;
-    img.loading = "lazy";
-    img.decoding = "async";
-    img.style.objectPosition = photo.position;
+    let used = 0, row = [];
+    const closeRow = () => {
+      const left = 6 - used;
+      if (row.length && left > 0) {
+        const lastItem = row[row.length - 1];
+        lastItem.el.style.gridColumn = "span " + (lastItem.span + left);
+        lastItem.el.classList.add(row.length === 1 ? "is-fill-solo" : "is-fill");
+      }
+      used = 0; row = [];
+    };
 
-    img.addEventListener("load", () => {
-      img.classList.add("is-loaded");
+    ed.photos.forEach((photo, p) => {
+      const layout = SPAN[photo.layout] ? photo.layout : "tile";
+      const span = SPAN[layout];
+      if (used + span > 6) closeRow();
+
+      const item = document.createElement("div");
+      item.className = "edition-gallery__item edition-gallery__item--" + layout;
+      item.dataset.file = photo.src.split("/").pop();
+      item.style.setProperty("--eg-delay", (p * 0.07).toFixed(2) + "s");
+
+      const img = document.createElement("img");
+      img.alt = photo.alt || ed.name;
+      img.decoding = "async";
+      img.draggable = false;
+      img.style.objectPosition = photo.position || "center 50%";
+      img.dataset.src = photo.src;
+      img.addEventListener("load", () => { img.classList.add("is-loaded"); item.classList.add("is-loaded"); });
+      img.addEventListener("error", () => item.classList.add("image-error"));
+
+      item.appendChild(img);
+      grid.appendChild(item);
+
+      used += span; row.push({ el: item, span });
+      if (used === 6) closeRow();
     });
+    closeRow();
 
-    img.addEventListener("error", () => {
-      item.classList.add("image-error");
+    slide.appendChild(grid);
+    track.appendChild(slide);
+    slides.push(slide);
+
+    /* tab button */
+    const tab = document.createElement("button");
+    tab.type = "button";
+    tab.className = "edition-gallery__tab";
+    tab.id = "eg-tab-" + e;
+    tab.setAttribute("role", "tab");
+    tab.setAttribute("aria-controls", slide.id);
+    // tab.innerHTML = ed.name + " <small>" + ed.photos.length + "</small>";
+
+        tab.textContent = ed.name;
+    
+        tab.addEventListener("click", () => { stopAuto(); go(e); });
+    tab.addEventListener("keydown", (ev) => {
+      if (ev.key !== "ArrowRight" && ev.key !== "ArrowLeft") return;
+      ev.preventDefault();
+      stopAuto();
+      const j = (e + (ev.key === "ArrowRight" ? 1 : -1) + EDITIONS.length) % EDITIONS.length;
+      go(j); tabs[j].focus();
     });
-
-    img.src = photo.src;
-
-    item.appendChild(img);
-    grid.appendChild(item);
+    tabsWrap.appendChild(tab);
+    tabs.push(tab);
   });
+
+  if (EDITIONS.length < 2) {
+    prevBtn.hidden = nextBtn.hidden = countEl.hidden = true;
+  }
+
+  /* ── load photos only when the section is close to the screen ── */
+  const loadAll = () => track.querySelectorAll("img[data-src]").forEach((img) => {
+    img.src = img.dataset.src; img.removeAttribute("data-src");
+  });
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((es) => {
+      if (es.some((x) => x.isIntersecting)) { loadAll(); io.disconnect(); }
+    }, { rootMargin: "800px 0px" });
+    io.observe(root);
+  } else loadAll();
+
+  /* ── move to an edition ── */
+  function setHeight() {
+    viewport.style.height = slides[index].offsetHeight + "px";
+  }
+  function movePill() {
+    const t = tabs[index];
+    pill.style.width = t.offsetWidth + "px";
+    pill.style.transform = "translateX(" + t.offsetLeft + "px)";
+    if (tabsWrap.scrollWidth > tabsWrap.clientWidth) {
+      tabsWrap.scrollTo({ left: t.offsetLeft - 20, behavior: REDUCE ? "auto" : "smooth" });
+    }
+  }
+  function go(i, first) {
+    const changed = i !== index;
+    index = Math.max(0, Math.min(last, i));
+    track.style.transform = "translate3d(" + (-index * 100) + "%,0,0)";
+
+    slides.forEach((s, k) => {
+      const on = k === index;
+      s.classList.toggle("is-active", on && seen);
+      s.setAttribute("aria-hidden", String(!on));
+      if (on) s.removeAttribute("inert"); else s.setAttribute("inert", "");
+    });
+    tabs.forEach((t, k) => {
+      t.setAttribute("aria-selected", String(k === index));
+      t.tabIndex = k === index ? 0 : -1;
+    });
+
+    eyebrow.textContent = "Inside " + EDITIONS[index].name;
+    if (changed && !first) {
+      eyebrow.classList.remove("is-swap"); void eyebrow.offsetWidth; eyebrow.classList.add("is-swap");
+    }
+    countEl.textContent = pad(index + 1) + " / " + pad(EDITIONS.length);
+    bar.style.setProperty("--eg-progress", ((index + 1) / EDITIONS.length).toFixed(3));
+    movePill();
+    setHeight();
+  }
+
+  prevBtn.addEventListener("click", () => { stopAuto(); go(index === 0 ? last : index - 1); });
+  nextBtn.addEventListener("click", () => { stopAuto(); go(index === last ? 0 : index + 1); });
+
+  /* ── swipe on phones / drag with a mouse ── */
+  let sx = 0, sy = 0, dx = 0, down = false, decided = false, horizontal = false;
+  viewport.addEventListener("pointerdown", (e) => {
+    if (e.button !== 0 || EDITIONS.length < 2) return;
+    down = true; decided = false; horizontal = false; dx = 0; sx = e.clientX; sy = e.clientY;
+  });
+  window.addEventListener("pointermove", (e) => {
+    if (!down) return;
+    const mx = e.clientX - sx, my = e.clientY - sy;
+    if (!decided) {
+      if (Math.abs(mx) < 8 && Math.abs(my) < 8) return;
+      decided = true;
+      horizontal = Math.abs(mx) > Math.abs(my);
+      if (!horizontal) { down = false; return; }
+      track.classList.add("is-dragging");
+      stopAuto();
+    }
+    const edge = (index === 0 && mx > 0) || (index === last && mx < 0);
+    dx = edge ? mx * 0.3 : mx;
+    track.style.transform = "translate3d(calc(" + (-index * 100) + "% + " + dx + "px),0,0)";
+  });
+  const endDrag = () => {
+    if (!down) return;
+    down = false;
+    if (!horizontal) return;
+    track.classList.remove("is-dragging");
+    const far = Math.abs(dx) > viewport.clientWidth * 0.15;
+    go(far ? index + (dx < 0 ? 1 : -1) : index);
+  };
+  window.addEventListener("pointerup", endDrag);
+  window.addEventListener("pointercancel", endDrag);
+  viewport.addEventListener("click", (e) => { if (horizontal) { e.preventDefault(); e.stopPropagation(); horizontal = false; } }, true);
+
+  /* ── keep the height right when the screen size changes ── */
+  if ("ResizeObserver" in window) {
+    const ro = new ResizeObserver(() => { setHeight(); movePill(); });
+    slides.forEach((s) => ro.observe(s));
+  } else {
+    window.addEventListener("resize", () => { setHeight(); movePill(); });
+  }
+
+  /* ── autoplay: only while visible, stops for good once someone interacts ── */
+  let timer = null, autoOn = GALLERY_SETTINGS.autoplaySeconds > 0 && EDITIONS.length > 1 && !REDUCE;
+  let visible = false, hovered = false;
+  function tick() {
+    clearInterval(timer); timer = null;
+    if (!autoOn || !visible || hovered) return;
+    timer = setInterval(() => go(index === last ? 0 : index + 1), GALLERY_SETTINGS.autoplaySeconds * 1000);
+  }
+  function stopAuto() { autoOn = false; tick(); }
+  if (autoOn && "IntersectionObserver" in window) {
+    new IntersectionObserver((es) => { visible = es[0].isIntersecting; tick(); }, { threshold: 0.35 }).observe(viewport);
+    viewport.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") { hovered = true; tick(); } });
+    viewport.addEventListener("pointerleave", (e) => { if (e.pointerType === "mouse") { hovered = false; tick(); } });
+    root.addEventListener("focusin", stopAuto);
+  }
+
+  if (!seen) {
+    const vo = new IntersectionObserver((es) => {
+      if (!es[0].isIntersecting) return;
+      seen = true; slides[index].classList.add("is-active"); vo.disconnect();
+    }, { threshold: 0.15 });
+    vo.observe(viewport);
+  }
+
+  /* ── start ── */
+  go(index, true);
+  requestAnimationFrame(() => requestAnimationFrame(() => viewport.classList.add("is-ready")));
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { movePill(); setHeight(); });
 })();

@@ -9,9 +9,9 @@ var PF = {
 
 
      PAYMENT_LINKS: {
-  platinum: 'PASTE_PLATINUM_PAYMENT_LINK',
-  gold: 'PASTE_GOLD_PAYMENT_LINK',
-  silver: 'PASTE_SILVER_PAYMENT_LINK'
+  platinum: 'https://payments.cashfree.com/forms/platinump',
+  gold: 'https://payments.cashfree.com/forms/goldp',
+  silver: 'https://payments.cashfree.com/forms/silverp'
 },
   /* paste your waitlist form link. Every "js-wait" link opens it.   */
   WAITLIST_LINK: 'https://forms.gle/2F4EUnFvXYE85Be29',

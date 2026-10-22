@@ -574,6 +574,36 @@ html.js .lift.in{opacity:1;transform:none;filter:blur(0);
 .phase-out b{font-weight:800}
 
 
+
+
+
+/* phase toggle button */
+.phase-toggle{
+  margin-left:auto;flex-shrink:0;
+  width:32px;height:32px;
+  display:flex;align-items:center;justify-content:center;
+  background:none;border:1px solid var(--brand-line);
+  border-radius:50%;cursor:pointer;color:var(--brand-text-soft);
+  transition:border-color .25s,color .25s;
+}
+.phase-toggle svg{width:16px;height:16px;display:block;
+  transition:transform .35s var(--ease-silk,cubic-bezier(.4,0,.2,1))}
+.phase.open .phase-toggle svg{transform:rotate(180deg)}
+.phase-toggle:hover{border-color:var(--brand-coral);color:var(--brand-coral)}
+
+/* collapsible body */
+.phase-body{
+  display:grid;
+  grid-template-rows:0fr;
+  transition:grid-template-rows .4s var(--ease-silk,cubic-bezier(.4,0,.2,1));
+  overflow:hidden;
+}
+.phase-body>*{min-height:0;overflow:hidden}
+.phase.open .phase-body{grid-template-rows:1fr}
+
+
+
+
 /* ═══════════════════════════════════════════════════════════════════
    06 · WHO SHOULD ATTEND
    ═══════════════════════════════════════════════════════════════════ */
@@ -2032,3 +2062,21 @@ li span strong {
     animation: none !important; transition-duration: .001ms !important; transition-delay: 0s !important;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

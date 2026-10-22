@@ -1099,37 +1099,37 @@ runScroll();
 
 //   const galleryImages = [
 //     {
-//       src: "image&video/g1.webp",
+//       src: "g1.webp",
 //       layout: "hero",
 //       position: "center 100%",
 //       alt: "Edition 1 group photo"
 //     },
 //     {
-//       src: "image&video/t1.webp",
+//       src: "t1.webp",
 //       layout: "tile",
 //       position: "center 25%",
 //       alt: "Coach at Edition 1"
 //     },
 //     {
-//       src: "image&video/t2.webp",
+//       src: "t2.webp",
 //       layout: "tile",
 //       position: "center 35%",
 //       alt: "Menu psychology session"
 //     },
 //     {
-//       src: "image&video/t3.webp",
+//       src: "t3.webp",
 //       layout: "tile",
 //       position: "center 25%",
 //       alt: "Coach teaching attendees"
 //     },
 //     {
-//       src: "image&video/t4.webp",
+//       src: "t4.webp",
 //       layout: "tile",
 //       position: "center 50%",
 //       alt: "Attendees inside the session"
 //     },
 //     {
-//       src: "image&video/s.webp",
+//       src: "s.webp",
 //       layout: "wide",
 //       position: "center 50%",
 //       alt: "Edition 1 event moments"
@@ -1183,7 +1183,7 @@ runScroll();
    INSIDE EDITION — sliding gallery
    ───────────────────────────────────────────────────────────────────
    HOW TO ADD PHOTOS / A NEW EDITION
-   1. Put the photo files in your  image&video/  folder.
+   1. Put the photo files in your    folder.
    2. Add them to the EDITIONS list below. A new edition = copy one
       { name: ..., photos: [...] } block and change the names.
       The buttons, counter, slide and animation are made automatically.
@@ -1209,25 +1209,25 @@ const EDITIONS = [
   {
     name: "Edition 1",
     photos: [
-      { src: "image&video/g1.webp", layout: "hero", position: "center 100%", alt: "Edition 1 group photo" },
-      { src: "image&video/t1.webp", layout: "tile", position: "center 25%",  alt: "Coach at Edition 1" },
-      { src: "image&video/t2.webp", layout: "tile", position: "center 35%",  alt: "Menu psychology session" },
-      { src: "image&video/t3.webp", layout: "tile", position: "center 25%",  alt: "Coach teaching attendees" },
-      { src: "image&video/t4.webp", layout: "tile", position: "center 50%",  alt: "Attendees inside the session" },
-      { src: "image&video/s.webp",  layout: "wide", position: "center 50%",  alt: "Edition 1 event moments" }
+      { src: "g1.webp", layout: "hero", position: "center 100%", alt: "Edition 1 group photo" },
+      { src: "t1.webp", layout: "tile", position: "center 25%",  alt: "Coach at Edition 1" },
+      { src: "t2.webp", layout: "tile", position: "center 35%",  alt: "Menu psychology session" },
+      { src: "t3.webp", layout: "tile", position: "center 25%",  alt: "Coach teaching attendees" },
+      { src: "t4.webp", layout: "tile", position: "center 50%",  alt: "Attendees inside the session" },
+      { src: "s.webp",  layout: "wide", position: "center 50%",  alt: "Edition 1 event moments" }
     ]
   },
 
   {
     name: "Edition 2",
     photos: [
-      { src: "image&video/E2-7.jpeg", layout: "half", position: "center 55%", alt: "Edition 2 attendees with Coach Karthikeyan" },
-      { src: "image&video/E2-5.jpeg", layout: "half", position: "center 40%", alt: "Coach Karthikeyan with Edition 2 attendees" },
-      { src: "image&video/E2 1.png", layout: "tile", position: "center 30%", alt: "Coach Karthikeyan speaking at Edition 2" },
-      { src: "image&video/E2-2.png", layout: "tile", position: "center 35%", alt: "Coach Karthikeyan explaining a framework" },
-      { src: "image&video/E2-3.png", layout: "tile", position: "center 32%", alt: "Coach Karthikeyan with the room" },
-      { src: "image&video/E2-4.jpeg", layout: "half", position: "center 45%", alt: "Edition 2 attendees around the table" },
-      { src: "image&video/E2-6.jpeg", layout: "half", position: "center 45%", alt: "Edition 2 group selfie in the session room" }
+      { src: "E2-7.jpeg", layout: "half", position: "center 55%", alt: "Edition 2 attendees with Coach Karthikeyan" },
+      { src: "E2-5.jpeg", layout: "half", position: "center 40%", alt: "Coach Karthikeyan with Edition 2 attendees" },
+      { src: "E2 1.png", layout: "tile", position: "center 30%", alt: "Coach Karthikeyan speaking at Edition 2" },
+      { src: "E2-2.png", layout: "tile", position: "center 35%", alt: "Coach Karthikeyan explaining a framework" },
+      { src: "E2-3.png", layout: "tile", position: "center 32%", alt: "Coach Karthikeyan with the room" },
+      { src: "E2-4.jpeg", layout: "half", position: "center 45%", alt: "Edition 2 attendees around the table" },
+      { src: "E2-6.jpeg", layout: "half", position: "center 45%", alt: "Edition 2 group selfie in the session room" }
     ]
   }
 
@@ -1238,12 +1238,12 @@ const EDITIONS = [
   {
     name: "Edition 3",
     photos: [
-      { src: "image&video/e3-1.webp", layout: "hero", position: "center 50%", alt: "Edition 3 group photo" },
-      { src: "image&video/e3-2.webp", layout: "tile", position: "center 30%", alt: "Edition 3 session" },
-      { src: "image&video/e3-3.webp", layout: "tile", position: "center 30%", alt: "Edition 3 session" },
-      { src: "image&video/e3-4.webp", layout: "tile", position: "center 30%", alt: "Edition 3 session" },
-      { src: "image&video/e3-5.webp", layout: "half", position: "center 50%", alt: "Edition 3 attendees" },
-      { src: "image&video/e3-6.webp", layout: "half", position: "center 50%", alt: "Edition 3 attendees" }
+      { src: "e3-1.webp", layout: "hero", position: "center 50%", alt: "Edition 3 group photo" },
+      { src: "e3-2.webp", layout: "tile", position: "center 30%", alt: "Edition 3 session" },
+      { src: "e3-3.webp", layout: "tile", position: "center 30%", alt: "Edition 3 session" },
+      { src: "e3-4.webp", layout: "tile", position: "center 30%", alt: "Edition 3 session" },
+      { src: "e3-5.webp", layout: "half", position: "center 50%", alt: "Edition 3 attendees" },
+      { src: "e3-6.webp", layout: "half", position: "center 50%", alt: "Edition 3 attendees" }
     ]
   }
   DELETE THIS LINE */
